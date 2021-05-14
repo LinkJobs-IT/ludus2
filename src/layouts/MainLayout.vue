@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh Lpr lff" class="shadow-2 rounded-borders">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -21,8 +21,8 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
       bordered
+      overlay
       content-class="bg-grey-1"
     >
       <q-list>
