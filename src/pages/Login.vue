@@ -1,58 +1,102 @@
 <template>
-  <q-page padding class="row flex-center">
-    <q-card class="q-pa-md col-10 col-md-6 col-lg-4">
 
-      <q-form
-        @submit="onSubmit"
-        @reset="onReset"
-        class="q-gutter-md"
-      >
+    <q-page id="qp-form" style="padding:3em" class="container justify-center">
+    <div class="row flex-center">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <header class="logo-data">
+          <q-img
+              src="../../public/ludus-images/logo_ludus.png"
+                alt="logo do ludus"
+                />
+          </header>
         <q-input
-          filled
-          v-model="name"
-          label="Your name *"
-          hint="Name and surname"
-          lazy-rules
-          :rules="[ val => val && val.length > 0 || 'Please type something']"
-        />
+          style="margin: 1em;"
+          rounded outlined
+          v-model="user.username"
+          type="text"
+          label="email"
+          label-color="secondary"
+          color="dark" />
 
         <q-input
-          filled
-          type="number"
-          v-model="age"
-          label="Your age *"
-          lazy-rules
-          :rules="[
-            val => val !== null && val !== '' || 'Please type your age',
-            val => val > 0 && val < 100 || 'Please type a real age'
-          ]"
-        />
+          style="margin: 1em;"
+          rounded outlined
+          v-model="user.password"
+          type="password"
+          label="senha"
+          label-color="secondary"
+          color="dark"
+          text-color="dark" />
 
-        <q-toggle v-model="accept" label="I accept the license and terms" />
+    <div class="row flex-center">
+            <q-btn
+              label="LOGAR"
+              @click="logar"
+              class="q-ml-sm"
+              color="dark"/>
+    </div>
 
-        <div>
-          <q-btn label="Submit" type="submit" color="primary"/>
-          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-        </div>
-      </q-form>
+    <div class="row flex-center">
+      <q-btn
+      flat to="Redefinir"
+      color="dark"
+      label="Esqueceu sua senha?"
+      style="margin: 20px;"
+       />
+    </div>
 
-    </q-card>
-  </q-page>
+    </div>
+    </div>
+    </q-page>
+
 </template>
+
+<style type="text/css">
+#qp-form{
+  font-family: 'Comfortaa', cursive;
+  font-weight: 300;
+}
+.font-titulo{
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+}
+.logo-data{
+  padding: 2px;
+  height: 140px;
+  max-width: 220px;
+  display: block;
+  margin: auto;
+}
+</style>
 
 <script>
 export default {
-  name: 'Controle',
+  name: 'layoutControle',
   data () {
     return {
-      name: null,
-      age: null,
-      accept: null
+      user: {
+        username: null,
+        password: null
+      }
     }
   },
   methods: {
-    onSubmit () {
-      this.$router.push('internal')
+    logar () {
+      const userBd = {
+        username: 'thaylinda',
+        password: 'rainha123'
+      }
+      if (this.user.username === userBd.username && this.user.password === userBd.password) {
+        this.$q.notify({
+          message: 'Entrando...',
+          color: 'dark'
+        })
+      } else {
+        this.$q.notify({
+          message: 'Senha ou usuário incorreto',
+          color: 'dark'
+        })
+      }
     }
   }
 }

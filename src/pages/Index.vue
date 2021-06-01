@@ -1,6 +1,11 @@
 <template>
-  <q-page padding>
-    <h3>Página Inicial</h3>
+  <q-page class="flex flex-center">
+    <q-avatar>
+      <img
+      alt="Ludus logo"
+      src="../../public/ludus-images/logo_ludus.png"
+    >
+    </q-avatar>
   </q-page>
 </template>
 

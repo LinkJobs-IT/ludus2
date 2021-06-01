@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="hHh Lpr lff" class="shadow-2 rounded-borders">
+  <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
         <q-btn
@@ -12,17 +12,17 @@
         />
 
         <q-toolbar-title>
-          LUDUS
+          <q-avatar>
+            <img>
+          </q-avatar>
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
     <q-drawer
       v-model="leftDrawerOpen"
+      show-if-above
       bordered
-      overlay
       content-class="bg-grey-1"
     >
       <q-list>
@@ -30,7 +30,7 @@
           header
           class="text-grey-8"
         >
-          Menu Principal
+          Essential Links
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -51,10 +51,16 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Home',
-    caption: 'Página Principal',
-    icon: 'home',
-    link: '/'
+    title: 'Login',
+    caption: 'quasar.dev',
+    icon: 'school',
+    link: 'Login'
+  },
+  {
+    title: 'LoginCadastro',
+    caption: 'quasar.dev',
+    icon: 'school',
+    link: 'LogarCadastro'
   }
 ]
 

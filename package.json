@@ -1,9 +1,9 @@
 {
   "name": "ludus",
   "version": "0.0.1",
-  "description": "Projeto da equipe 21 da turma ADS-2 Noite",
-  "productName": "Ludus",
-  "author": "Gota Serena Games",
+  "description": "ludus",
+  "productName": "ludus",
+  "author": "GOTA SERENA GAMES",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
