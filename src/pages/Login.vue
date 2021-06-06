@@ -16,7 +16,9 @@
           type="text"
           label="email"
           label-color="secondary"
-          color="dark" />
+          color="dark"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Digite alguma coisa']" />
 
         <q-input
           style="margin: 1em;"
@@ -26,7 +28,9 @@
           label="senha"
           label-color="secondary"
           color="dark"
-          text-color="dark" />
+          text-color="dark"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Digite alguma coisa']" />
 
     <div class="row flex-center">
             <q-btn
@@ -42,6 +46,14 @@
       color="dark"
       label="Esqueceu sua senha?"
       style="margin: 20px;"
+       />
+    </div>
+
+    <div class="row flex-center">
+      <q-btn
+      flat to="LogarCadastro"
+      color="dark"
+      label="Não tem uma conta?"
        />
     </div>
 

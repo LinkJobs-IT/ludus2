@@ -1,76 +1,62 @@
 <template>
-  <q-layout id="qp-form">
+<q-page style="padding:3em" class="row justify-center">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+      <h2 class="font-titulo flex flex-center ">
 
-    <q-header none class="bg-dark text-white">
-      <q-toolbar>
-        <q-btn dense flat round color="accent" icon="arrow_back_ios" @click="left = !left" to="Login"/>
-      </q-toolbar>
-    </q-header>
+       Cadastro
 
-      <q-page padding class="container justify-center">
-      <div class="row justify-center">
+       </h2>
+    <q-form
+      @submit="onSubmit"
+      class="q-gutter-md"
+    >
+      <q-input
+        rounded outlined
+        style="margin: 1em;"
+        v-model="name"
+        label="Nome"
+        hint="Digite seu nome"
+        label-color="secondary"
+        color="dark"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Digite alguma coisa']"
+      />
 
-      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-4">
-        <header>
-          <h2 class="row justify-center font-titulo text-dark">
-            cadastro
-          </h2>
-        </header>
+      <q-input
+        rounded outlined
+        style="margin: 1em;"
+        v-model="email"
+        label="Email"
+        hint="Digite seu Email"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Digite alguma coisa']"
+      />
+      <q-input
+        rounded outlined
+        style="margin: 1em;"
+        type="password"
+        v-model="senha"
+        label="Senha"
+        hint="Escolha uma senha"
+        label-color="secondary"
+        color="dark"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Digite alguma coisa']"
+      />
 
-        <q-input
-          type="text"
-          label="usuário"
-          label-color="secondary"
-          color="dark"
-          text-color="dark" />
+      <q-toggle v-model="accept" label="Estou de acordo com os Termos de Uso e Política de Privacidade" />
 
-        <q-input
-          type="text"
-          label="email"
-          label-color="secondary"
-          color="dark" />
+      <div class="row flex-center">
+        <q-btn
+          class="q-ml-sm"
+          label="Criar Conta"
+          type="submit"
+          color="dark"/>
+      </div>
+    </q-form>
 
-        <q-input
-          type="password"
-          label="senha"
-          label-color="secondary"
-          color="dark"
-          text-color="dark" />
-
-          <q-input
-          type="password"
-          label="confirme sua senha"
-          label-color="secondary"
-          color="dark"
-          text-color="dark" />
-
-          <div class="q-gutter-sm" style="padding: 20px;">
-            <q-checkbox
-              v-model="customModel"
-              color="dark"
-              label="Concordo com a Política de Privacidade e Termos de uso"
-              true-value="yes"
-              false-value="no"
-            />
-            </div>
-
-            <div class="q-gutter-sm">
-
-          </div>
-
-          <div class="row flex-center" style="padding: 5px;">
-            <q-btn
-              label="criar conta"
-              class="q-ml-sm"
-              color="accent"
-              text-color="dark"/>
-              </div>
-
-        </div>
-        </div>
-    </q-page>
-
-  </q-layout>
+  </div>
+</q-page>
 </template>
 
 <style type="text/css">
@@ -81,18 +67,45 @@
 .font-titulo{
   font-family: 'Comfortaa', cursive;
   font-weight: 700;
+  color: #0d0632;
 }
 </style>
 
 <script>
 export default {
-  name: 'layoutCadastro',
-
   data () {
     return {
+      name: null,
+      email: null,
+      senha: null,
 
-      customModel: 'no'
+      accept: false
+    }
+  },
+
+  methods: {
+    onSubmit () {
+      if (this.accept !== true) {
+        this.$q.notify({
+          color: 'dark',
+          textColor: 'white',
+          icon: 'warning',
+          message: 'Você precisa estar de acordo com nossos Termos de Uso e Política de Privacidade'
+        })
+      } else {
+        this.$q.notify({
+          color: 'dark',
+          textColor: 'white',
+          icon: 'cloud_done',
+          message: 'Submitted'
+        })
+      }
+    },
+
+    onReset () {
+      this.name = null
+      this.age = null
+      this.accept = false
     }
   }
-}
-</script>
+}</script>

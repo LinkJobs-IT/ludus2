@@ -7,7 +7,10 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'Login', component: () => import('pages/Login.vue') },
       { path: 'LogarCadastro', component: () => import('pages/LogarCadastro.vue') },
-      { path: 'Redefinir', component: () => import('pages/Redefinir.vue') }
+      { path: 'Redefinir', component: () => import('pages/Redefinir.vue') },
+      { path: 'Sobre', component: () => import('pages/Sobre.vue') },
+      { path: 'Contatos', component: () => import('pages/PaginaContatos.vue') },
+      { path: 'Noticias', component: () => import('pages/PaginaNoticias.vue') }
     ]
   },
 

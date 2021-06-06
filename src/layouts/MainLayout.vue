@@ -1,6 +1,6 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+  <q-layout view="lHh Lpr lFf" id="qp-form">
+    <q-header elevated class="bg-dark">
       <q-toolbar>
         <q-btn
           flat
@@ -12,9 +12,6 @@
         />
 
         <q-toolbar-title>
-          <q-avatar>
-            <img>
-          </q-avatar>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -28,9 +25,9 @@
       <q-list>
         <q-item-label
           header
-          class="text-grey-8"
+          class="font-titulo"
         >
-          Essential Links
+         <p>MENU</p>
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -46,21 +43,50 @@
   </q-layout>
 </template>
 
+<style type="text/css">
+    #qp-form{
+      font-family: 'Comfortaa', cursive;
+      font-weight: 300;
+    }
+    .font-titulo{
+      font-family: 'Comfortaa', cursive;
+      font-weight: 700;
+    }
+</style>
+
 <script>
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Login',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'Login'
+    title: 'Sobre',
+    caption: 'Equipe, Termos de Uso, Política de Privacidade',
+    icon: 'info',
+    link: 'Sobre'
   },
   {
-    title: 'LoginCadastro',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'LogarCadastro'
+    title: 'Jogo',
+    caption: '',
+    icon: 'sports_esports',
+    link: ''
+  },
+  {
+    title: 'Contato',
+    caption: 'Trabalhe conosco, mensagens',
+    icon: 'email',
+    link: 'Contatos'
+  },
+  {
+    title: 'Notícias',
+    caption: 'Pesquisar, imprensa',
+    icon: 'article',
+    link: 'Noticias'
+  },
+  {
+    title: 'Sair',
+    caption: 'Sair do Ludus',
+    icon: 'logout',
+    link: 'Login'
   }
 ]
 
