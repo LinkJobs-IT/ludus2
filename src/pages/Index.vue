@@ -1,6 +1,19 @@
 <template>
   <q-page style="padding:3em" class="container justify-center">
     <div class="items-center col-xs-12 col-sm-6 col-md-6 col-lg-4 q-gutter-md">
+
+      <q-icon
+       name="person"
+       color="dark"
+        size="60px"/>
+
+      <q-btn flat
+      color="dark"
+      label="MEU PERFIL"
+      to = "Perfil"
+      style="margin: 20px;"
+       />
+
     <h3 class="font-titulo flex flex-center" style="color: #0d0632;">Disciplinas</h3>
     <q-btn no-caps
     class="font-titulo"
@@ -17,6 +30,7 @@
     text-color="dark">
         Matemática
     </q-btn>
+
     <q-btn no-caps
     class="font-titulo"
     size="35px"

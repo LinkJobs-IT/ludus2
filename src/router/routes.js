@@ -10,7 +10,8 @@ const routes = [
       { path: 'Redefinir', component: () => import('pages/Redefinir.vue') },
       { path: 'Sobre', component: () => import('pages/Sobre.vue') },
       { path: 'Contatos', component: () => import('pages/PaginaContatos.vue') },
-      { path: 'Noticias', component: () => import('pages/PaginaNoticias.vue') }
+      { path: 'Noticias', component: () => import('pages/PaginaNoticias.vue') },
+      { path: 'Perfil', component: () => import('pages/PaginaPerfil.vue') }
     ]
   },
 

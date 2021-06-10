@@ -18,7 +18,7 @@
 
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
+      hide-if-above
       bordered
       content-class="bg-grey-1"
     >

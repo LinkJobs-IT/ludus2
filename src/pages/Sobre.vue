@@ -1,7 +1,8 @@
 <template>
-  <q-page class="font-titulo">
+  <q-page class="row font-titulo justify-center">
+    <div class=" font-titulo col-xs-12 col-sm-12 col-md-12 col-lg-4 text-h4">
     <div class="q-pa-md q-gutter-sm font-titulo">
-      <div class="q-pa-md">
+      <div class="q-pa-md justify-center">
     <q-carousel
       v-model="slide"
       transition-prev="slide-right"
@@ -11,7 +12,7 @@
       class="rounded-borders"
     >
     <div>Equipe Ludus</div>
-      <q-carousel-slide name="style" class="column no-wrap flex-center">
+      <q-carousel-slide name="style" class="column no-wrap flex-center text-h6">
         <q-img
               src="../../public/ludus-images/thayanne-tenorio.jpeg"
                 alt="logo do ludus"
@@ -20,19 +21,17 @@
           {{ dev1 }}
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="tv" class="column no-wrap flex-center">
-        <q-icon name="live_tv" color="primary" size="56px" />
+      <q-carousel-slide name="tv" class="column no-wrap flex-center text-h6">
         <div class="q-mt-md text-center">
           {{ dev2 }}
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="layers" class="column no-wrap flex-center">
-        <q-icon name="layers" color="primary" size="56px" />
+      <q-carousel-slide name="layers" class="column no-wrap flex-center text-h6">
         <div class="q-mt-md text-center">
           {{ dev3 }}
         </div>
       </q-carousel-slide>
-      <q-carousel-slide name="map" class="column no-wrap flex-center">
+      <q-carousel-slide name="map" class="column no-wrap flex-center text-h6">
         <q-icon name="terrain" color="primary" size="56px" />
         <div class="q-mt-md text-center">
           {{ dev4 }}
@@ -90,6 +89,7 @@
       </q-card>
     </q-dialog>
     </div>
+    </div>
   </q-page>
 </template>
 <style type="text/css">
@@ -111,7 +111,7 @@ export default {
       dev1: 'Thayanne Tenorio - Front-end Developer',
       dev2: 'Carlos Rafael- Full-Stack Developer & Data Scientist & Scrum Master',
       dev3: 'Layon Figueiroa- Back-end Developer & Data Scientist ',
-      dev4: 'Melissa Assis- UX Designer',
+      dev4: 'Melissa Assis- UI & UX Designer',
       lorem: ''
     }
   }

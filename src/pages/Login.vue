@@ -40,9 +40,17 @@
               color="dark"/>
     </div>
 
-    <div class="row flex-center">
+   <!-- <div class="row flex-center">
       <q-btn
       flat to="Redefinir"
+      color="dark"
+      label="Esqueceu sua senha?"
+      style="margin: 20px;"
+       />
+    </div>
+  -->
+    <div class="row flex-center">
+      <q-btn flat @click="prompt"
       color="dark"
       label="Esqueceu sua senha?"
       style="margin: 20px;"
@@ -109,6 +117,21 @@ export default {
           color: 'dark'
         })
       }
+    },
+    prompt () {
+      this.$q.dialog({
+        title: 'Redefinição',
+        message: 'Qual o seu email cadastrado?',
+        prompt: {
+          model: '',
+          isValid: val => val.length > 10, // << here is the magic
+          type: 'text' // optional
+        },
+        cancel: true,
+        persistent: true
+      }).onOk(data => {
+        console.log('>>>> OK, received', data)
+      })
     }
   }
 }

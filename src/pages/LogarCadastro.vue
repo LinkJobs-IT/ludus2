@@ -43,6 +43,12 @@
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Digite alguma coisa']"
       />
+      <p> <strong> Sou: </strong> </p>
+        <q-option-group
+          :options="options"
+          type="radio"
+          v-model="group"
+        />
 
       <q-toggle v-model="accept" label="Estou de acordo com os Termos de Uso e Política de Privacidade" />
 
@@ -79,7 +85,13 @@ export default {
       email: null,
       senha: null,
 
-      accept: false
+      accept: false,
+
+      group: false,
+      options: [
+        { label: 'Aluno', value: 'aluno', color: 'dark' },
+        { label: 'Professor', value: 'professor', color: 'dark' }
+      ]
     }
   },
 

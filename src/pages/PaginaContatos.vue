@@ -1,10 +1,11 @@
 <template id="qp-form">
 <q-page>
-    <div class=" font-titulo row text-h4" style="padding-left: 20px; padding-top: 10px;">
+  <div class="row">
+    <div class=" font-titulo col-xs-12 col-sm-12 col-md-12 col-lg-12 text-h4" style="padding-left: 20px; padding-top: 10px;">
       Mensagem
     </div> <br/>
       <q-input style="width:300px; padding-left: 20px;"
-          class="row justify-left"
+          class="col-xs-12 col-sm-6 col-md-6 col-lg-12 justify-left"
           label="Digite seu nome"
           v-model="nome"
           :dense="dense"
@@ -12,21 +13,19 @@
           :rules="[ val => val && val.length > 0 || '']" />
 
       <q-input style="width:300px; padding-left: 20px;"
-         class="row justify-left"
+         class="col-xs-12 col-sm-12 col-md-12 col-lg-12 justify-left"
          label="Digite seu email"
-         v-model="text"
+         v-model="email"
          :dense="dense"
          lazy-rules
         :rules="[ val => val && val.length > 0 || '']" />
 
-<div  class="row justify-left">
+<div  class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-    <q-form class="q-gutter-md">
-
-  <div class="q-pa-md size-lg" style="width:800px">
+  <div class="q-pa-md size-sm col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
     <q-input
-      v-model="text"
+      v-model="mensagem"
       filled
       type="textarea"
       lazy-rules
@@ -42,10 +41,12 @@
          color="dark"
          />
       </div>
-    </q-form>
+
     </div>
+
     <hr style="margin:15px">
-    <div class="font-titulo row text-h4" style="padding-left: 20px; padding-top: 20px; padding-bottom: 20px;"> Trabalhe conosco</div>
+
+    <div class="font-titulo col-xs-12 col-sm-12 col-md-12 col-lg-12 text-h4" style="padding-left: 20px; padding-top: 20px; padding-bottom: 20px;"> Trabalhe conosco</div>
 
       <div style=" width:400px;" class="q-pa-md size-lg">
       <q-input
@@ -60,6 +61,7 @@
          type="submit"
          color="dark"
          />
+      </div>
       </div>
       </div>
 </q-page>
@@ -81,7 +83,7 @@ export default {
   data () {
     return {
       mensagem: null,
-      text: '',
+      email: '',
       dense: false,
       nome: null
     }
