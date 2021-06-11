@@ -3,22 +3,20 @@
     <div class=" font-titulo row text-h4" style="padding-left: 20px; padding-top: 10px;">
       Imprensa
     </div> <br/>
-
-    <div>
-        <q-badge color="dark"> Sua Pesquisa: "{{ search }}" </q-badge>
+    <div class="row">
+      <div class="col-md-6" style="margin-left: 15px;">
+        <q-input
+          v-model="search"
+          debounce="500"
+          filled
+          placeholder="Pesquisa"
+        >
+          <template v-slot:append>
+            <q-icon name="search" />
+          </template>
+        </q-input>
       </div>
-
-      <q-input
-        v-model="search"
-        debounce="500"
-        filled
-        placeholder="Search"
-      >
-        <template v-slot:append>
-          <q-icon name="search" />
-        </template>
-      </q-input>
-
+    </div>
     <div class="q-pa-md">
     <q-carousel
       arrows

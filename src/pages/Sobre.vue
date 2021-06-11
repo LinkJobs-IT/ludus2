@@ -52,7 +52,10 @@
       />
     </div>
   </div>
+  <div class="row q-gutter-sm justify-center">
     <q-btn label="Políticas de Privacidade" color="dark" @click="politicas = true" />
+    <q-btn label="Termos de Uso" color="dark" @click="termos = true" />
+  </div>
 
     <q-dialog v-model="politicas">
       <q-card>
@@ -71,7 +74,6 @@
         </q-card-section>
       </q-card>
     </q-dialog>
-    <q-btn label="Termos de Uso" color="dark" @click="termos = true" />
 
     <q-dialog v-model="termos">
       <q-card>

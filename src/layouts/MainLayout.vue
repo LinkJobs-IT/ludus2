@@ -66,9 +66,9 @@ const linksData = [
   },
   {
     title: 'Jogo',
-    caption: '',
+    caption: 'Jogos Educativos',
     icon: 'sports_esports',
-    link: ''
+    link: '/'
   },
   {
     title: 'Contato',
