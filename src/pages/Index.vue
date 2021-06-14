@@ -2,7 +2,7 @@
   <q-page style="padding:3em" class="container justify-center">
     <div class="items-center col-xs-12 col-sm-6 col-md-6 col-lg-4 q-gutter-md">
 
-      <q-icon
+      <q-icon clickable to ="Perfil"
        name="person"
        color="dark"
         size="60px"/>
